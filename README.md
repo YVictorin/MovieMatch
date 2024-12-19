@@ -44,7 +44,7 @@ Installation
 
 `cd backend`
 
-2. Navigate to the frontend directory
+2. Navigate to the backend directory
 
 
 
