@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MovieMatch - Find Similar Movies</title>
+    <meta name="description" content="An elegant and modern HTML5 template for personal or professional projects.">
+    <meta name="author" content="Yonjou Victorin">
+
+    <!-- Open Graph Metadata (for social sharing) -->
+    <meta property="og:title" content="Yonjou's Project">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:description" content="Explore Yonjou Victorin's innovative project using modern web development techniques.">
+    <meta property="og:image" content="https://yourwebsite.com/preview-image.png">
+
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+343434
+<body class="bg-dark">
+<!-- Main Content -->
+<!--{{>header}}-->
+
+<div class="d-flex justify-content-center align-items-center vh-100" id="main-div">
+    <form class="d-flex flex-column w-100 justify-content-center align-items-center"  >
+        <div class="mb-3 w-75 d-flex flex-column align-items-center">
+            <label for="user-input" class="form-label mb-3 d-flex align-items-center justify-content-center text-white">Type the name of a movie to find it on the map:</label>
+
+            <!-- Search icon input -->
+            <div class="container">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-12 col-lg-6">  <!-- col-lg-# stretches the col that contains the input-group depending on what number # is-->
+                        <div class="input-group user-select-all">
+                            <input id="user-input" class="form-control" type="text">
+                            <a id="submit-btn" href="/movies?userMovie={{userMovieName}}" class="input-group-text" role="button"><i class="bi bi-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!--{{>footer}}-->
+
+<!-- JavaScript -->
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+cd into the frontend folder and run npm start
