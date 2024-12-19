@@ -33,8 +33,6 @@ To get the development environment set up, follow these steps:
 
 
 
-Installation
-------------
 
 `npm install`
 
