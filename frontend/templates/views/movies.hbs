@@ -7,10 +7,63 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Movies similar to {{userMovieName}}</title>
 </head>
 <body>
-<div>{{userMovieName}}</div>
+    <main class="vw-100 vh-100 bg-black p-4 " >
+        <div class="d-flex vw-100 mb-5">
+            <div class="vw-100"><p class="h2 text-warning ">What to watch</p></div>
+        </div>
+
+        <div class="vw-100 float-start">
+            <div class="row">
+                <div class="h3 text-light fw-bold d-flex align-items-center gap-2">
+                    <div class="bg-warning" style="width: 0.25rem; height: 2rem; border-radius: 10px"></div>
+                    <span>Top picks</span>
+                    <i class="fa-solid fa-greater-than text-light fs-2" style="position: relative; left: 1rem; top: 2px;"></i></div>
+            </div>
+            <div class="row">
+                <p class="text-white-50">TV shows and movies just for yet</p>
+            </div>
+            <div class="row">
+                <p class="text-primary">Sign in</p>
+            </div>
+            <div class="vw-100 vh-100 container float-start">
+                <div class="row h-75 d-flex">
+                    <div class="col p-0 object-fit-cover container" style="background-color: #0b0b0b" ><img class="img-fluid w-100 h-50 border-none" src="./img/poster.png" alt="">
+
+                        <div class="row p-4 text-white-50 d-flex align-items-center">
+                            <i class="bi bi-star-fill p-0 w-50 text-warning">
+                                <span class="ml-2 text-white-50"> 7.5</span>
+                            </i>
+                            <i class="bi bi-star p-0 w-50"></i>
+                        </div>
+
+
+                        <div class="row px-4 text-light">American Gigolo</div>   <!--    poster title   -->
+
+                        <div class="row p-4 text-light d-flex justify-content-center align-items-center"><div class="p-2 bg-dark d-flex justify-content-center align-items-center text-primary rounded-2">Watch options</div></div>
+
+                        <div class="row p-4 text-light d-flex align-items-center">
+                            <i class="bi bi-play-fill w-50 text-white-50">
+                                <span class="mx-1 text-light">Trailer</span>
+                            </i>
+                            <i class="bi bi-info-circle w-50 fs-4"></i>
+                        </div>
+                    </div>
+
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
 <script type="module" src="/js/app.js"></script>
 </body>
 </html>

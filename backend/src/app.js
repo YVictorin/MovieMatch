@@ -52,7 +52,7 @@ app.get("/movies", (req, res) => {
                 })
             }
 
-            //sending multiple img tags of the movie's poster image
+            //sending multiple html img tags of the movie's poster image
             const allImgPosters = data.imgSrcArr
                 .map(src => `<img src="${src}" alt="Movie Poster">`)
                 .join("");

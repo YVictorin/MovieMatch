@@ -11,8 +11,7 @@ const getUserMovie = async () => {
     try {
         const response = await fetch(`/movies?userMovie=${input.value.trim()}`);
         const dataJson = await response.json();
-        // console.log(dataJson.similarMovies);
-        // console.log(dataJson.allImgPosters);
+        console.log(dataJson);
     } catch (e) {
         console.error(e);
     }
@@ -20,7 +19,6 @@ const getUserMovie = async () => {
 
     if(input) {
         submitBtn.addEventListener("click", (e) => {
-            // e.preventDefault();
             getUserMovie();
         });
 }
