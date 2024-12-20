@@ -38,7 +38,7 @@ const displaySimilarMovies = async () => {
 
         dataJson.imgElems.forEach((img, index) => {
             if (index < cardImgArr.length) {
-                const parsedDoc = new DOMParser().parseFromString(dataJson.imgElems[index], "text/html"); //converts the string from the json data into an actual HTML e
+                const parsedDoc = new DOMParser().parseFromString(dataJson.imgElems[index], "text/html"); //converts the string from the json data into an actual HTML element
                 const imgElement = parsedDoc.body.firstChild; // This will give you the <img> element
 
                 // Add multiple classes separately
