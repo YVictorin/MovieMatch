@@ -24,14 +24,21 @@ const displaySimilarMovies = async () => {
         dataJson.similarMovies.forEach((title, index) => {
             if (index < cardsArr.length) {
                 let movieTitle = document.createElement("span");
-                movieTitle.textContent = title;
+
+                // Truncate title if it exceeds 5 characters
+                if (title.length > 10) {
+                    movieTitle.textContent = title.substring(0, 10) + '...';
+                } else {
+                    movieTitle.textContent = title;
+                }
+
                 cardsArr[index].appendChild(movieTitle);
             }
         });
 
         dataJson.imgElems.forEach((img, index) => {
             if (index < cardImgArr.length) {
-                const parsedDoc = new DOMParser().parseFromString(dataJson.imgElems[index], "text/html");
+                const parsedDoc = new DOMParser().parseFromString(dataJson.imgElems[index], "text/html"); //converts the string from the json data into an actual HTML e
                 const imgElement = parsedDoc.body.firstChild; // This will give you the <img> element
 
                 // Add multiple classes separately
