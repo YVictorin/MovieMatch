@@ -25,7 +25,7 @@ const displaySimilarMovies = async () => {
             if (index < cardsArr.length) {
                 let movieTitle = document.createElement("span");
 
-                // Truncate title if it exceeds 5 characters
+                // Truncate title if it exceeds 10 characters
                 if (title.length > 10) {
                     movieTitle.textContent = title.substring(0, 10) + '...';
                 } else {
