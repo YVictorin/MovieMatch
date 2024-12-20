@@ -28,43 +28,40 @@ app.get("", (req, res) => {
     res.render("index");
 })
 
-
-//localhost:3000/similar
-app.get("/movies", (req, res) => {
+// Endpoint for JSON response
+app.get("/movies/json", (req, res) => {
     const userMovieName = req.query.userMovie;
 
-    convertMovieName(userMovieName, (error, data) => {
-        if (error) {
+    convertMovieName(userMovieName, (err, data) => {
+        if (err) {
             return res.send({
-                error,
+                err,
+            })
+        } else {
+            const movieId = data.id;
+            findSimilarMovie(movieId, (err, data) => {
+                if (err) {
+                    return res.send({
+                        err,
+                    })
+                } else {
+                    //contains multiple <img> elements, each representing a movie poster
+                    // const allImgPosters = data.imgSrcArr.map(src => `<img src="${src}" alt="Movie Poster">`);
+
+                    return res.send({
+                        userMovieName,
+                        similarMovies: data.titleArr,
+                       imgElems: data.imgElems
+                    });
+                }
             })
         }
+    });
+});
 
-        const movieId = data.id;
-
-        findSimilarMovie(movieId, (error, data) => {
-            if (error) {
-                return res.render("movies",{
-                    userMovieName,
-                    error,
-                    similarMovies: [],
-                    allImgPosters: "",
-                })
-            }
-
-            //sending multiple html img tags of the movie's poster image
-            const allImgPosters = data.imgSrcArr
-                .map(src => `<img src="${src}" alt="Movie Poster">`)
-                .join("");
-
-
-             res.render('movies',{
-                userMovieName,
-                similarMovies: data.titleArr,
-                allImgPosters,
-            })
-        })
-    })
+//Endpoint for html and css page
+app.get("/movies", (req, res) => {
+    res.render('movies');
 })
 
 app.listen(PORT, () => {

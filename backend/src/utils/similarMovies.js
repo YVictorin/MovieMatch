@@ -23,7 +23,7 @@ const getSimilarMovies = (userMovieId, callback) => {
         } else {
             callback(undefined, {
                 titleArr: response.body.results.map((movie) => movie.title),
-                imgSrcArr: response.body.results.map((movie) => tmdbPosterUrl + movie.poster_path)
+                imgElems: response.body.results.map((movie) => `<img src="${tmdbPosterUrl + movie.poster_path}" alt="a movie poster">`)
             })
         }
     })

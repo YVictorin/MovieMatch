@@ -1,17 +1,27 @@
 // Import the Bootstrap bundle
-//
-// This includes Popper and all of Bootstrap's JS plugins.
 
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import {data} from "autoprefixer";
+
+console.log('app.js loaded');
 
 const input = document.getElementById("user-input");
 const submitBtn = document.getElementById("submit-btn");
 
+//creates the cards with the proper info only after the user enters said info, styled using bootstrap classes
+
 const getUserMovie = async () => {
     try {
-        const response = await fetch(`/movies?userMovie=${input.value.trim()}`);
+        const response = await fetch(`/movies/json?userMovie=${input.value.trim()}`, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
         const dataJson = await response.json();
-        console.log(dataJson);
+
+
     } catch (e) {
         console.error(e);
     }
@@ -19,6 +29,7 @@ const getUserMovie = async () => {
 
     if(input) {
         submitBtn.addEventListener("click", (e) => {
+            e.preventDefault();
             getUserMovie();
         });
 }
