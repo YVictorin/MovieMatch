@@ -51,7 +51,7 @@ app.get("/movies/json", (req, res) => {
                     return res.send({
                         userMovieName,
                         similarMovies: data.titleArr,
-                       imgElems: data.imgElems
+                        imgElems: data.imgElems
                     });
                 }
             })
@@ -61,7 +61,9 @@ app.get("/movies/json", (req, res) => {
 
 //Endpoint for html and css page
 app.get("/movies", (req, res) => {
-    res.render('movies');
+    res.render('movies', {
+        userMovieName: req.query.userMovie,
+    });
 })
 
 app.listen(PORT, () => {
